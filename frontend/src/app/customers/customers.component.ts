@@ -17,7 +17,7 @@ import { EditCustomerDialogComponent } from './edit-customer-dialog.component';
 @Component({
   selector: 'app-customers',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatTableModule, MatButtonModule, MatIconModule, MatDialogModule, MatFormFieldModule, MatInputModule, CreateCustomerDialogComponent, RentCarDialogComponent],
+  imports: [CommonModule, FormsModule, MatTableModule, MatButtonModule, MatIconModule, MatDialogModule, MatFormFieldModule, MatInputModule],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.scss'
 })
