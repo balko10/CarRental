@@ -1,0 +1,10 @@
+export * from './carController.service';
+import { CarControllerService } from './carController.service';
+export * from './carController.serviceInterface';
+export * from './customerController.service';
+import { CustomerControllerService } from './customerController.service';
+export * from './customerController.serviceInterface';
+export * from './rentalController.service';
+import { RentalControllerService } from './rentalController.service';
+export * from './rentalController.serviceInterface';
+export const APIS = [CarControllerService, CustomerControllerService, RentalControllerService];

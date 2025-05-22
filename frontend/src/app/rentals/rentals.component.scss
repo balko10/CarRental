@@ -1,0 +1,26 @@
+.rentals-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #fff7c5 0%, #f7f7fa 100%);
+  border-radius: 12px;
+  padding: 1.5rem 2rem 1.2rem 2rem;
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08);
+}
+
+.rentals-header-title {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffc800;
+  letter-spacing: 0.02em;
+}
+
+.rentlas-header-actions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}

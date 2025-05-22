@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Auto für Kunde auswählen</h2>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" style="width:100%; margin-bottom:1rem;">
+    <mat-label>Fahrzeug</mat-label>
+    <select [(ngModel)]="selectedCarId">
+      <option [ngValue]="null">Bitte wählen...</option>
+      <option *ngFor="let car of cars" [ngValue]="car.carId">
+        {{car.brand}} {{car.model}} ({{car.licensePlate}})
+      </option>
+    </select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="width:100%; margin-bottom:1rem;">
+    <mat-label>Mietbeginn</mat-label>
+    <input matInput type="date" [(ngModel)]="rentalBegin">
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="width:100%; margin-bottom:1rem;">
+    <mat-label>Mietende</mat-label>
+    <input matInput type="date" [(ngModel)]="rentalEnd">
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="width:100%;">
+    <mat-label>Mietpreis pro Tag (€)</mat-label>
+    <input matInput type="number" [(ngModel)]="dailyPrice" [readonly]="true">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Abbrechen</button>
+  <button mat-flat-button color="primary" (click)="save()" [disabled]="!selectedCarId || !rentalBegin || !rentalEnd">Speichern</button>
+</div>

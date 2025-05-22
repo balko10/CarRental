@@ -1,0 +1,39 @@
+mat-card {
+  background: #f7f7fa;
+  color: #222;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  transition: box-shadow 0.2s, transform 0.2s;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: visible;
+  padding-top: 2.5rem;
+}
+mat-card:hover {
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.25);
+  transform: translateY(-4px) scale(1.03);
+}
+mat-icon {
+  font-size: 56px !important;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  height: 56px;
+  width: 56px;
+  overflow: visible;
+}
+mat-card-title {
+  margin-top: 1rem;
+}
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  overflow: visible;
+  height: 64px;
+  width: 100%;
+}

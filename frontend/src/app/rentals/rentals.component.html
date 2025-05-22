@@ -1,0 +1,51 @@
+<div class="rentals-header">
+  <div class="rentals-header-title">
+    <mat-icon style="color: #ffcf20;">assignment</mat-icon>
+    <span> Verleihübersicht</span>
+  </div>
+</div>
+<table mat-table [dataSource]="rentals" class="mat-elevation-z2" style="width:100%; margin-top:2rem;">
+  <ng-container matColumnDef="rentalId">
+    <th mat-header-cell *matHeaderCellDef>Nr.</th>
+    <td mat-cell *matCellDef="let r">{{r.rentalId}}</td>
+  </ng-container>
+  <ng-container matColumnDef="carBrandAndModel">
+    <th mat-header-cell *matHeaderCellDef>Fahrzeug</th>
+    <td mat-cell *matCellDef="let r">{{r.carBrandAndModel}}</td>
+  </ng-container>
+  <ng-container matColumnDef="carLicensePlate">
+    <th mat-header-cell *matHeaderCellDef>Kennzeichen</th>
+    <td mat-cell *matCellDef="let r">{{r.carLicensePlate}}</td>
+  </ng-container>
+  <ng-container matColumnDef="customerFullName">
+    <th mat-header-cell *matHeaderCellDef>Kunde</th>
+    <td mat-cell *matCellDef="let r">{{r.customerFullName}}</td>
+  </ng-container>
+  <ng-container matColumnDef="rentalBegin">
+    <th mat-header-cell *matHeaderCellDef>Von</th>
+    <td mat-cell *matCellDef="let r">{{r.rentalBegin | date:'shortDate'}}</td>
+  </ng-container>
+  <ng-container matColumnDef="rentalEnd">
+    <th mat-header-cell *matHeaderCellDef>Bis</th>
+    <td mat-cell *matCellDef="let r">{{r.rentalEnd | date:'shortDate'}}</td>
+  </ng-container>
+  <ng-container matColumnDef="returnDate">
+    <th mat-header-cell *matHeaderCellDef>Rückgabe</th>
+    <td mat-cell *matCellDef="let r">{{r.returnDate | date:'shortDate'}}</td>
+  </ng-container>
+  <ng-container matColumnDef="mileageBegin">
+    <th mat-header-cell *matHeaderCellDef>km Start</th>
+    <td mat-cell *matCellDef="let r">{{r.mileageBegin}}</td>
+  </ng-container>
+  <ng-container matColumnDef="mileageEnd">
+    <th mat-header-cell *matHeaderCellDef>km Ende</th>
+    <td mat-cell *matCellDef="let r">{{r.mileageEnd}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<div *ngIf="rentals.length === 0" style="text-align:center; margin-top:2rem; color:#888;">
+  Keine Verleihvorgänge gefunden.
+</div>

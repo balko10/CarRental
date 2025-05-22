@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  rental-db:
+    image: mysql:9.0
+    container_name: rental-mysql
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: rental
+      MYSQL_DATABASE: rental
+      MYSQL_USER: rental
+      MYSQL_PASSWORD: rental
+    ports:
+      - "3306:3306"
+    volumes:
+      - rental-data:/var/lib/mysql
+
+volumes:
+  rental-data:
+    driver: local
