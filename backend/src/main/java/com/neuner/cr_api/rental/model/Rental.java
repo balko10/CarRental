@@ -78,11 +78,6 @@ public class Rental {
     @Column(name = "total_costs", precision = 10, scale = 2)
     private BigDecimal totalCosts;
 
-    @NotEmpty(message = "Empty rental status is not allowed.")
-    @Size(max = 50, message = "Rental status is too long.")
-    @Column(name = "rental_Status", nullable = false, length = 50)
-    private String rentalStatus = "aktiv";
-
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
